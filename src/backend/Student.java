@@ -42,7 +42,7 @@ public class Student {
         this.fullName = fullName;}
     public void setGender(String gender) {
         gender = gender.strip().toLowerCase();
-        if(gender.equals("male")||gender.equals("female")){
+        if(!gender.equals("male")&&!gender.equals("female")){
             throw new IllegalArgumentException("INVALID GENDER IS ENTERED");
         }else{this.gender = gender;}}
     public void setDepartment(String department) {
@@ -70,5 +70,5 @@ public class Student {
     //METHOD LINE REPRESENTATION FOR THE STUDENT DATA
     public String lineRepresentation(){
         return String.join(",",String.valueOf(this.id) , this.fullName , String.valueOf(this.age)
-                                ,this.gender ,this.department , String.valueOf(this.GPA),"\n");}
+                                ,this.gender ,this.department , this.GPA+"\n");}
 }

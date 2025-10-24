@@ -1,6 +1,8 @@
 package Frontend.src.backend;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,7 +31,8 @@ public class StudentDB {
             String gender = recordArray[3].strip().toLowerCase();
             String department = recordArray[4].strip();
             float gpa = Float.parseFloat(recordArray[5].strip());
-            this.students.add(new Student(id,fullName,age,gender,department,gpa));}}
+            this.students.add(new Student(id,fullName,age,gender,department,gpa));}
+        fileReader.close();}
 
     //METHOD TO TELL IF THE STUDENT IS INSIDE THE DB OR NOT USING ID
     public boolean isExistInStudentDatabase(int id){
@@ -54,6 +57,12 @@ public class StudentDB {
     public void removeStudent(Student oldStudent){
         if(this.students.contains(oldStudent)){
             this.students.remove(oldStudent);}}
-    
+
+    //METHOD TO WRITE THE RECORDS IN THE FILE
+    public void writeInFile() throws IOException {
+        FileWriter fileWriter = new FileWriter(this.fileName);
+        for(int i =0 ;i<this.students.size();i++){
+            fileWriter.write(this.students.get(i).lineRepresentation());}
+        fileWriter.close(); }
 
 }
