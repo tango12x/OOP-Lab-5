@@ -31,5 +31,18 @@ public class StudentDB {
             float gpa = Float.parseFloat(recordArray[5].strip());
             this.students.add(new Student(id,fullName,age,gender,department,gpa));}}
 
+    //METHOD TO TELL IF THE STUDENT IS INSIDE THE DB OR NOT USING ID
+    public boolean isExistInStudentDatabase(int id){
+        for(int i =0 ; i<this.students.size();i++){
+            if(this.students.get(i).getId() ==id){
+                return true;}}
+        return false;}
 
+    //METHOD TO RETURN THE STUDENT IF EXIST IN THE DB
+    public Student getStudent(int id){
+        for(int i =0 ; i<this.students.size();i++){
+            if(this.students.get(i).getId() ==id){
+                return this.students.get(i);}}
+        return null;}
+    
 }
