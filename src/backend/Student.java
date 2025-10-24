@@ -70,5 +70,5 @@ public class Student {
     //METHOD LINE REPRESENTATION FOR THE STUDENT DATA
     public String lineRepresentation(){
         return String.join(",",String.valueOf(this.id) , this.fullName , String.valueOf(this.age)
-                                ,this.gender ,this.department , String.valueOf(this.GPA));}
+                                ,this.gender ,this.department , String.valueOf(this.GPA),"\n");}
 }
