@@ -66,4 +66,9 @@ public class Student {
         this.setAge(age);
         this.setGender(gender);
         this.setDepartment(department);}
+
+    //METHOD LINE REPRESENTATION FOR THE STUDENT DATA
+    public String lineRepresentation(){
+        return String.join(",",String.valueOf(this.id) , this.fullName , String.valueOf(this.age)
+                                ,this.gender ,this.department , String.valueOf(this.GPA));}
 }
