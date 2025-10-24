@@ -44,5 +44,16 @@ public class StudentDB {
             if(this.students.get(i).getId() ==id){
                 return this.students.get(i);}}
         return null;}
+
+    //METHOD TO ADD THE STUDENT
+    public void addStudent(Student newStudent){
+        if(!this.students.contains(newStudent)){
+            this.students.add(newStudent);}}
+
+    //METHOD TO REMOVE THE STUDENT
+    public void removeStudent(Student oldStudent){
+        if(this.students.contains(oldStudent)){
+            this.students.remove(oldStudent);}}
     
+
 }
