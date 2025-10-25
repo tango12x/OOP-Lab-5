@@ -21,7 +21,7 @@ public class StudentDB {
     //GETTERS FOR THE RECORDS
     public ArrayList<Student> getRecords(){
         return this.students;}
-    
+
     //METHOD TO READ FROM THE FILE
     public void readFromFile() throws FileNotFoundException {
         File file  = new File(this.fileName);
@@ -54,12 +54,12 @@ public class StudentDB {
 
     //METHOD TO ADD THE STUDENT
     public void addStudent(Student newStudent){
-        if(!this.students.contains(newStudent)){
+        if(!isExistInStudentDatabase(newStudent.getId())){
             this.students.add(newStudent);}}
 
     //METHOD TO REMOVE THE STUDENT
     public void removeStudent(Student oldStudent){
-        if(this.students.contains(oldStudent)){
+        if(isExistInStudentDatabase(oldStudent.getId())){
             this.students.remove(oldStudent);}}
 
     //METHOD TO WRITE THE RECORDS IN THE FILE
