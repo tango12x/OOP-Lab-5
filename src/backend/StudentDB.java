@@ -18,6 +18,10 @@ public class StudentDB {
         this.fileName = fileName.strip();
         this.students = new ArrayList<>();}
 
+    //GETTERS FOR THE RECORDS
+    public ArrayList<Student> getRecords(){
+        return this.students;}
+    
     //METHOD TO READ FROM THE FILE
     public void readFromFile() throws FileNotFoundException {
         File file  = new File(this.fileName);
