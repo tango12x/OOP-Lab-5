@@ -11,7 +11,7 @@ public class StudentDbTest {
         //LOOPING THROUGH THE RECORDS TO PRINT IT
         for(int i=0;i<db.getRecords().size();i++){
             System.out.print(db.getRecords().get(i).lineRepresentation());}
-        System.out.print("---------------------------------------");
+        System.out.print("---------------------------------------\n");
         //ADDING NEW STUDENT TO THE FILE
         db.addStudent(new Student(9789,"Abdelrahman Atef",21,"male","CCE", (float) 3.6));
         //REMOVING OLD STUDENT
@@ -21,6 +21,16 @@ public class StudentDbTest {
         //READING FROM THE FILE AGAIN
         db.readFromFile();
         for(int i=0;i<db.getRecords().size();i++){
+            System.out.print(db.getRecords().get(i).lineRepresentation());}
+        System.out.print("---------------------------------------\n");
+        //ADDING STUDENT WITH AUTOMATICALLY GENERATED ID
+        db.addStudent(new Student("Atef Nasreldin",21,"male","ECE",4,db));
+        //WRITING THE DATA INTO THE FILE
+        db.writeInFile();
+        //READING FROM THE FILE AGAIN
+        db.readFromFile();
+        for(int i=0;i<db.getRecords().size();i++){
             System.out.print(db.getRecords().get(i).lineRepresentation());}}
+
 }
 
