@@ -22,13 +22,11 @@ public class Student {
         if(GPA < 0 || GPA > 4) {
             throw new IllegalArgumentException("INVALID GPA IS ENTERED");
         }else {this.GPA = GPA;}}
-    public void setGPA(){
-        //logic to generate id automatically
-        }
     public void setAge(int age) {
         if(age<4 || age>27){
             throw new IllegalArgumentException("INVALID AGE IS ENTERED ");
         }else{this.age=age;}}
+    //IN CASE THE ID IS GIVEN
     public void setId(int id) {
         if(id<1){
             throw new IllegalArgumentException("INVALID ID IS ENTERED");
@@ -60,8 +58,9 @@ public class Student {
         this.setGPA(GPA);}
 
     //CLASS CONSTRUCTOR IF THE ID IS GENERATED AUTOMATICALLY
-    public Student (int id ,String fullName,int age,String gender ,String department){
-        this.setId(id);
+    public Student (String fullName,int age,String gender ,String department ,float GPA,StudentDB db){
+        this.id = db.generateId();
+        this.setGPA(GPA);
         this.setFullName(fullName);
         this.setAge(age);
         this.setGender(gender);
