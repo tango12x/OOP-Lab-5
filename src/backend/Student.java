@@ -37,7 +37,7 @@ public class Student {
         if(fullName.split(" ").length<2 || fullName.isEmpty()){
             throw new IllegalArgumentException("THIS IS INVALID FULLNAME");}
         for(int i = 0 ; i<fullName.length();i++ ){
-            if(!Character.isLetter(fullName.charAt(i))){
+            if(!Character.isLetter(fullName.charAt(i)) && !Character.isSpaceChar(fullName.charAt(i))){
                 throw new IllegalArgumentException("INVALID NAME IS ENTERED");}}
         this.fullName = fullName;}
     public void setGender(String gender) {
@@ -59,7 +59,7 @@ public class Student {
         this.setDepartment(department);
         this.setGPA(GPA);}
 
-    //CLASS CONSTRUCTOR IF THE ID IS GENERATED AUTOMTICALLY
+    //CLASS CONSTRUCTOR IF THE ID IS GENERATED AUTOMATICALLY
     public Student (int id ,String fullName,int age,String gender ,String department){
         this.setId(id);
         this.setFullName(fullName);
