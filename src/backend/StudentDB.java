@@ -24,6 +24,7 @@ public class StudentDB {
 
     //METHOD TO READ FROM THE FILE
     public void readFromFile() throws FileNotFoundException {
+        this.students.clear();
         File file  = new File(this.fileName);
         Scanner fileReader = new Scanner(file);
         while(fileReader.hasNextLine()){
@@ -68,5 +69,14 @@ public class StudentDB {
         for(int i =0 ;i<this.students.size();i++){
             fileWriter.write(this.students.get(i).lineRepresentation());}
         fileWriter.close(); }
+
+    //METHOD TO GENERATE A UNIQUE ID
+    public int generateId(){
+        int maxId = 0;
+        for(int i = 0 ;i<this.students.size();i++){
+            if(this.students.get(i).getId()>maxId){
+                maxId = this.students.get(i).getId();}}
+        return maxId+1;}
+
 
 }
