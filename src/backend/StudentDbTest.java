@@ -30,7 +30,18 @@ public class StudentDbTest {
         //READING FROM THE FILE AGAIN
         db.readFromFile();
         for(int i=0;i<db.getRecords().size();i++){
-            System.out.print(db.getRecords().get(i).lineRepresentation());}}
+            System.out.print(db.getRecords().get(i).lineRepresentation());}
+        System.out.print("---------------------------------------\n");
+        //SORTING THE STUDENTS DESCENDINGLY
+        db.sortById();
+        for(int i=0;i<db.getRecords().size();i++){
+            System.out.print(db.getRecords().get(i).lineRepresentation());}
+        System.out.print("---------------------------------------\n");
+        db.sortByGPA();
+        for(int i=0;i<db.getRecords().size();i++){
+            System.out.print(db.getRecords().get(i).lineRepresentation());}
 
+
+    }
 }
 
