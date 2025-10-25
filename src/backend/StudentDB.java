@@ -3,8 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentDB {
 
@@ -77,6 +76,13 @@ public class StudentDB {
             if(this.students.get(i).getId()>maxId){
                 maxId = this.students.get(i).getId();}}
         return maxId+1;}
+
+    //METHOD TO SORT THE STUDENTS BY THE ID
+    public void sortById(){
+        this.students.sort(Comparator.comparing(Student::getId).reversed());}
+    //METHOD TO SORT THE STUDENTS BY THE ID
+    public void sortByGPA(){
+        this.students.sort(Comparator.comparing(Student::getGPA).reversed());}
 
 
 }
