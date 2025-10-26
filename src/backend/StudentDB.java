@@ -1,4 +1,4 @@
-package Frontend.src.backend;
+package backend;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

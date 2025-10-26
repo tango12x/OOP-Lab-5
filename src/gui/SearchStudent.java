@@ -1,6 +1,6 @@
-package Frontend.src.gui;
-import Frontend.src.backend.Student;
-import Frontend.src.backend.StudentDB;
+package gui;
+import backend.Student;
+import backend.StudentDB;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

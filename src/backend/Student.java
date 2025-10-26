@@ -1,4 +1,4 @@
-package Frontend.src.backend;
+package backend;
 public class Student {
 
     //CLASS ATTRIBUTES
