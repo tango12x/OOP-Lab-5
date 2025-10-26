@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
+
+import java.io.FileNotFoundException;
 
 /**
  *
@@ -129,19 +127,25 @@ public class Home extends javax.swing.JFrame {
 
     private void ViewStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewStudentActionPerformed
     // Go to View Student page
-    new ViewStudent().setVisible(true);
-    this.dispose();
-    }//GEN-LAST:event_ViewStudentActionPerformed
+    try {
+        //ViewStudents.main();
+        new ViewStudents().setVisible(true);
+        this.dispose();
+    } catch (Exception e) {
 
+    }
+    }//GEN-LAST:event_ViewStudentActionPerformed
+    //!klikllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+/* 
     private void UpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStudentActionPerformed
     // Go to Update Student page
     new UpdateStudent().setVisible(true);
     this.dispose();
     }//GEN-LAST:event_UpdateStudentActionPerformed
-
-    private void DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteStudentActionPerformed
+*/
+    private void DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) throws FileNotFoundException {//GEN-FIRST:event_DeleteStudentActionPerformed
     // Go to Delete Student page
-    new DeleteStudent().setVisible(true);
+    new DeleteStudents().setVisible(true);
     this.dispose();
     }//GEN-LAST:event_DeleteStudentActionPerformed
 
