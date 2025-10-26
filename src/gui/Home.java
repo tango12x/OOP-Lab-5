@@ -4,6 +4,8 @@
  */
 package gui;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author ahmme
