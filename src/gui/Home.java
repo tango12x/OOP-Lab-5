@@ -83,7 +83,12 @@ public class Home extends javax.swing.JFrame {
         DeleteStudent.setActionCommand("");
         DeleteStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteStudentActionPerformed(evt);
+                try {
+                    DeleteStudentActionPerformed(evt);
+                } catch (FileNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
             }
         });
 
