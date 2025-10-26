@@ -80,5 +80,5 @@ public class SearchStudent extends JFrame {
         setVisible(true);}
 
     public static void main(String[] args){
-        new SearchStudent();}
+        new SearchStudent().setLocationRelativeTo(null);}
 }

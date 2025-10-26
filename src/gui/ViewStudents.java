@@ -145,7 +145,9 @@ public class ViewStudents extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        new Home().setVisible(true);
+        Home homeframe =  new Home();
+        homeframe.setVisible(true);
+        homeframe.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -199,6 +201,7 @@ public class ViewStudents extends javax.swing.JFrame {
                     ViewStudents frame = new ViewStudents();
                     frame.setVisible(true);
                     frame.setDefaultCloseOperation(ViewStudents.EXIT_ON_CLOSE);
+                    frame.setLocationRelativeTo(null);
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
                 }

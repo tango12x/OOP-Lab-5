@@ -206,7 +206,9 @@ public class DeleteStudents extends javax.swing.JFrame {
         }
         System.out.println("changes saved to file");
         System.out.println("Going back to Home Screen");
-        new Home().setVisible(true);
+        Home homeframe =  new Home();
+        homeframe.setVisible(true);
+        homeframe.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -261,6 +263,7 @@ public class DeleteStudents extends javax.swing.JFrame {
                 try {
                     DeleteStudents frame = new DeleteStudents();
                     frame.setVisible(true);
+                    frame.setLocationRelativeTo(null);
                     frame.setDefaultCloseOperation(DeleteStudents.EXIT_ON_CLOSE);
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
