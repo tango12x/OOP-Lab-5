@@ -2,26 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Frontend;
-import Frontend.src.backend.Student;
-import Frontend.src.backend.StudentDB;
+package gui;
+
+import backend.Student;
+import backend.StudentDB;
+
 /**
  *
  * @author ahmme
  */
 public class AddStudent extends javax.swing.JFrame {
-private StudentDB db;
+
+    private StudentDB db;
+
     /**
      * Creates new form AddStudent
      */
     public AddStudent() {
         initComponents();
-    db = new StudentDB("data/students"); // path to your student file
-    try {
-        db.readFromFile(); // load existing students
-    } catch (Exception e) {
-        System.out.println("File not found or empty: " + e.getMessage());
-    }
+        db = new StudentDB("data/students"); // path to your student file
+        try {
+            db.readFromFile(); // load existing students
+        } catch (Exception e) {
+            System.out.println("File not found or empty: " + e.getMessage());
+        }
     }
 
     /**
@@ -140,86 +144,86 @@ private StudentDB db;
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enterdatalable)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(DepartmentTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(GenderTextField))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(AgeTextField))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(FullNameTextField))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(StudentIDTextField))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(GPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(Submitbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(enterdatalable)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(DepartmentTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(GenderTextField))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(AgeTextField))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(FullNameTextField))
+                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                        .addComponent(StudentIDTextField))))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(GPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                                .addComponent(Submitbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enterdatalable)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(StudentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(FullNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(AgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(GenderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(DepartmentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Submitbutton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(GPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(enterdatalable)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(StudentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(5, 5, 5)
+                                                .addComponent(FullNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(5, 5, 5)
+                                                .addComponent(AgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel7)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(5, 5, 5)
+                                                .addComponent(GenderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(5, 5, 5)
+                                                .addComponent(DepartmentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Submitbutton)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel6)
+                                                .addComponent(GPATextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(20, 20, 20))
         );
 
         jLabel1.getAccessibleContext().setAccessibleName("Addstudent lable");
@@ -228,96 +232,96 @@ private StudentDB db;
     }// </editor-fold>//GEN-END:initComponents
 
     private void SubmitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbuttonActionPerformed
-   try {
-        // === Step 1: Read input from text fields ===
-        String idText = StudentIDTextField.getText().trim();
-        String fullName = FullNameTextField.getText().trim();
-        String ageText = AgeTextField.getText().trim();
-        String gender = GenderTextField.getText().trim();
-        String department = DepartmentTextField.getText().trim();
-        String gpaText = GPATextField.getText().trim();
+        try {
+            // === Step 1: Read input from text fields ===
+            String idText = StudentIDTextField.getText().trim();
+            String fullName = FullNameTextField.getText().trim();
+            String ageText = AgeTextField.getText().trim();
+            String gender = GenderTextField.getText().trim();
+            String department = DepartmentTextField.getText().trim();
+            String gpaText = GPATextField.getText().trim();
 
-        // === Step 2: Validate that no field (except ID) is empty ===
-        if (fullName.isEmpty() || ageText.isEmpty() || gender.isEmpty()
-                || department.isEmpty() || gpaText.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "Please fill in all fields (Student ID can be left empty).",
-                    "Input Error",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // === Step 3: Parse numeric fields ===
-        int age = Integer.parseInt(ageText);
-        float gpa = Float.parseFloat(gpaText);
-
-        // === Step 4: Validate gender ===
-        if (!(gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female"))) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "Invalid gender! Please enter 'Male' or 'Female'.",
-                    "Validation Error",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // === Step 5: Determine the Student ID ===
-        int id;
-        if (idText.isEmpty()) {
-            // Auto-generate new ID (max + 1)
-            id = 1;
-            for (Student s : db.getRecords()) {
-                if (s.getId() >= id) {
-                    id = s.getId() + 1;
-                }
-            }
-        } else {
-            id = Integer.parseInt(idText);
-            if (db.isExistInStudentDatabase(id)) {
+            // === Step 2: Validate that no field (except ID) is empty ===
+            if (fullName.isEmpty() || ageText.isEmpty() || gender.isEmpty()
+                    || department.isEmpty() || gpaText.isEmpty()) {
                 javax.swing.JOptionPane.showMessageDialog(this,
-                        "A student with this ID already exists!",
-                        "Duplicate ID",
+                        "Please fill in all fields (Student ID can be left empty).",
+                        "Input Error",
                         javax.swing.JOptionPane.ERROR_MESSAGE);
                 return;
             }
+
+            // === Step 3: Parse numeric fields ===
+            int age = Integer.parseInt(ageText);
+            float gpa = Float.parseFloat(gpaText);
+
+            // === Step 4: Validate gender ===
+            if (!(gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female"))) {
+                javax.swing.JOptionPane.showMessageDialog(this,
+                        "Invalid gender! Please enter 'Male' or 'Female'.",
+                        "Validation Error",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // === Step 5: Determine the Student ID ===
+            int id;
+            if (idText.isEmpty()) {
+                // Auto-generate new ID (max + 1)
+                id = 1;
+                for (Student s : db.getRecords()) {
+                    if (s.getId() >= id) {
+                        id = s.getId() + 1;
+                    }
+                }
+            } else {
+                id = Integer.parseInt(idText);
+                if (db.isExistInStudentDatabase(id)) {
+                    javax.swing.JOptionPane.showMessageDialog(this,
+                            "A student with this ID already exists!",
+                            "Duplicate ID",
+                            javax.swing.JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            }
+
+            // === Step 6: Create the Student object ===
+            Student newStudent = new Student(id, fullName, age, gender, department, gpa);
+
+            // === Step 7: Add to database and save ===
+            db.addStudent(newStudent);
+            db.writeInFile();
+
+            // === Step 8: Show success message ===
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Student added successfully!\nAssigned ID: " + id,
+                    "Success",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            // === Step 9: Clear fields ===
+            StudentIDTextField.setText("");
+            FullNameTextField.setText("");
+            AgeTextField.setText("");
+            GenderTextField.setText("");
+            DepartmentTextField.setText("");
+            GPATextField.setText("");
+
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Age and GPA must be valid numbers!",
+                    "Format Error",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (IllegalArgumentException e) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    e.getMessage(),
+                    "Validation Error",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Error adding student: " + e.getMessage(),
+                    "Error",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
         }
-
-        // === Step 6: Create the Student object ===
-        Student newStudent = new Student(id, fullName, age, gender, department, gpa);
-
-        // === Step 7: Add to database and save ===
-        db.addStudent(newStudent);
-        db.writeInFile();
-
-        // === Step 8: Show success message ===
-        javax.swing.JOptionPane.showMessageDialog(this,
-                "Student added successfully!\nAssigned ID: " + id,
-                "Success",
-                javax.swing.JOptionPane.INFORMATION_MESSAGE);
-
-        // === Step 9: Clear fields ===
-        StudentIDTextField.setText("");
-        FullNameTextField.setText("");
-        AgeTextField.setText("");
-        GenderTextField.setText("");
-        DepartmentTextField.setText("");
-        GPATextField.setText("");
-
-    } catch (NumberFormatException e) {
-        javax.swing.JOptionPane.showMessageDialog(this,
-                "Age and GPA must be valid numbers!",
-                "Format Error",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
-    } catch (IllegalArgumentException e) {
-        javax.swing.JOptionPane.showMessageDialog(this,
-                e.getMessage(),
-                "Validation Error",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
-    } catch (Exception e) {
-        javax.swing.JOptionPane.showMessageDialog(this,
-                "Error adding student: " + e.getMessage(),
-                "Error",
-                javax.swing.JOptionPane.ERROR_MESSAGE);
-    }
     }//GEN-LAST:event_SubmitbuttonActionPerformed
 
     private void StudentIDTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentIDTextFieldActionPerformed
@@ -358,7 +362,9 @@ private StudentDB db;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddStudent().setVisible(true);
+                AddStudent frame = new AddStudent();
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
             }
         });
     }

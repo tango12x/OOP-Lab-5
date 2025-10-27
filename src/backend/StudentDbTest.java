@@ -1,4 +1,4 @@
-package Frontend.src.backend;
+package backend;
 import java.io.IOException;
 
 public class StudentDbTest {

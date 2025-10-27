@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Frontend;
+package gui;
 
 /**
  *
@@ -157,8 +157,9 @@ public class login extends javax.swing.JFrame {
                 "Welcome",
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
-        //Open next window
-        new Home().setVisible(true);
+        Home homeFrame = new Home();
+        homeFrame.setVisible(true);
+        homeFrame.setLocationRelativeTo(null);
         this.dispose();
 
     } else {
@@ -199,7 +200,9 @@ public class login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                login frame = new login();
+                frame.setVisible(true);
+                frame.setLocationRelativeTo(null);
             }
         });
     }
