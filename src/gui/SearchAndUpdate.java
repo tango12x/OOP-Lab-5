@@ -3,7 +3,6 @@ import backend.*;
 import javax.swing.table.DefaultTableModel;
 
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -119,40 +118,20 @@ public class SearchAndUpdate extends javax.swing.JFrame {
         jLabel3.setText("Age");
 
 
-        fieldName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldNameActionPerformed(evt);
-            }
-        });
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Full Name");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Student ID");
 
-        fieldAge.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldAgeActionPerformed(evt);
-            }
-        });
-
         buttonGroup1.add(radiobtnMale);
         radiobtnMale.setSelected(true);
         radiobtnMale.setText("Male");
-        radiobtnMale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radiobtnMaleActionPerformed(evt);
-            }
-        });
+        
 
         buttonGroup1.add(radiobtnFemale);
         radiobtnFemale.setText("Female");
-        radiobtnFemale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radiobtnFemaleActionPerformed(evt);
-            }
-        });
+        
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Gender");
@@ -160,20 +139,10 @@ public class SearchAndUpdate extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Department");
 
-        fieldDepartment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldDepartmentActionPerformed(evt);
-            }
-        });
-
+        
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("GPA");
 
-        fieldGPA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fieldGPAActionPerformed(evt);
-            }
-        });
 
         btnSave.setBackground(new java.awt.Color(51, 153, 0));
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
@@ -391,30 +360,6 @@ public class SearchAndUpdate extends javax.swing.JFrame {
         jPanel2.setVisible(true);
     }//GEN-LAST:event_btnUpdateActionPerformed
 
-    private void fieldDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldDepartmentActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_fieldDepartmentActionPerformed
-    
-    private void fieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldNameActionPerformed
-    
-    private void fieldAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldAgeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldAgeActionPerformed
-
-    private void radiobtnMaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobtnMaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radiobtnMaleActionPerformed
-    
-    private void radiobtnFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobtnFemaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radiobtnFemaleActionPerformed
-
-    private void fieldGPAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldGPAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fieldGPAActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) throws IllegalArgumentException {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
@@ -429,20 +374,58 @@ public class SearchAndUpdate extends javax.swing.JFrame {
             System.out.println("User chose YES. update record...");
             Student updatedStudent = new Student(
                     student.getId(),
-                    "",
-                    0,
+                    student.getFullName(),
+                    student.getAge(),
                     "male",
-                    "",
-                    0
+                    student.getDepartment(),
+                    student.getGPA()
             );
-            updatedStudent.setId(student.getId());
-            updatedStudent.setFullName(fieldName.getText().trim());
-            updatedStudent.setAge(Integer.parseInt(fieldAge.getText().trim()));
-            updatedStudent.setDepartment(fieldDepartment.getText().trim());
-            updatedStudent.setGPA(Float.parseFloat(fieldGPA.getText().trim()));
             if (radiobtnFemale.isSelected()) {
                 updatedStudent.setGender("female");
             }
+
+            if (fieldName.getText().trim().isEmpty() || fieldAge.getText().trim().isEmpty() 
+                || fieldDepartment.getText().trim().isEmpty()
+                    || fieldGPA.getText().trim().isEmpty()) {
+                javax.swing.JOptionPane.showMessageDialog(this,
+                        "Please fill in all fields .",
+                        "Input Error",
+                        javax.swing.JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            
+            try {
+                updatedStudent.setFullName(fieldName.getText().trim());
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+                return;
+            }
+            try {
+                updatedStudent.setAge(Integer.parseInt(fieldAge.getText().trim()));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Error: Age must be a valid integer.");
+                return;
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+                return;
+            }
+            try {
+                updatedStudent.setDepartment(fieldDepartment.getText().trim());
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+                return;
+            }
+            try {
+                updatedStudent.setGPA(Float.parseFloat(fieldGPA.getText().trim()));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Error: GPA must be a valid number.");
+                return;
+            } catch (IllegalArgumentException e) {
+                JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+                return;
+            }
+            
             // Update the student in the database
             db.removeStudent(student);
             db.addStudent(updatedStudent);
@@ -451,6 +434,7 @@ public class SearchAndUpdate extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println("Error writing to file: " + e.getMessage());
             }
+
             // Refresh the table display
             DefaultTableModel model = (DefaultTableModel) SearchStudentsTable.getModel();
             model.removeRow(0);

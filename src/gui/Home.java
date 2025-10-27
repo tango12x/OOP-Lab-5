@@ -163,7 +163,7 @@ public class Home extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_ViewStudentActionPerformed
-    //!klikllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+
  
     private void UpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStudentActionPerformed
     // Go to Update Student page
