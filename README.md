@@ -119,7 +119,7 @@ src/
 
 ---
 
-## ✨ Optional Enhancements
+## ✨ Other Enhancements
 - GPA-based sorting or filtering.  
 - Export all student records to CSV format.  
 - Improved layout and color themes using custom Swing components.  
