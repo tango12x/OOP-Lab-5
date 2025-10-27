@@ -164,13 +164,15 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ViewStudentActionPerformed
     //!klikllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
-/* 
+ 
     private void UpdateStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateStudentActionPerformed
     // Go to Update Student page
-    new UpdateStudent().setVisible(true);
-    this.dispose();
+        SearchAndUpdate deleteFrame = new SearchAndUpdate();
+        deleteFrame.setVisible(true);
+        deleteFrame.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_UpdateStudentActionPerformed
-     */
+
     private void DeleteStudentActionPerformed(java.awt.event.ActionEvent evt) throws FileNotFoundException {//GEN-FIRST:event_DeleteStudentActionPerformed
         // Go to Delete Student page
 

@@ -78,6 +78,7 @@ public class StudentDB {
 
     //METHOD TO WRITE THE RECORDS IN THE FILE
     public void writeInFile() throws IOException {
+        students.sort(Comparator.comparing(Student::getId));
         FileWriter fileWriter = new FileWriter(this.fileName);
         for (int i = 0; i < this.students.size(); i++) {
             fileWriter.write(this.students.get(i).lineRepresentation());
