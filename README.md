@@ -13,17 +13,19 @@ _Fall 2025 / 2026_
 ---
 
 ## 📘 Overview
-This project implements a **Student Management System (SMS)** using **Java Swing** for the GUI and **Object-Oriented Programming (OOP)** for backend logic.  
+This project implements a **Student Management System (SMS)** using **Java Swing** for the GUI and **Object-Oriented Programming (OOP)** principles for the backend logic.  
 It provides a simple and intuitive way to **add, view, update, delete, and search** student records, with all data stored in files for persistence.
+
+The project demonstrates a complete integration of GUI design, data management, and OOP principles in Java — aligning with the requirements of **Programming II (CC272)**.
 
 ---
 
 ## 🎯 Objectives
-- Build a full Java Swing GUI application.  
-- Apply **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.  
-- Implement **CRUD** operations with data validation.  
-- Use **events and listeners** for user interaction.  
-- Separate logic into **frontend (GUI)** and **backend (data handling)** layers.
+- Develop a full **Java Swing GUI application**.  
+- Apply OOP principles: **Encapsulation**, **Inheritance**, **Polymorphism**, and **Abstraction**.  
+- Implement **CRUD operations** with validation and error handling.  
+- Use **Swing events and listeners** to respond to user actions.  
+- Separate **frontend (GUI)** and **backend (data handling)** modules.
 
 ---
 
@@ -31,13 +33,13 @@ It provides a simple and intuitive way to **add, view, update, delete, and searc
 
 | Feature | Description |
 |----------|-------------|
-| ➕ **Add Student** | Enter student info, validate, and save to file. |
-| 👁️ **View Students** | Display all records in a `JTable`. |
-| ✏️ **Update Student** | Edit an existing student’s data. |
-| ❌ **Delete Student** | Remove a student record with confirmation. |
-| 🔍 **Search Student** | Find students by ID or name. |
+| ➕ **Add Student** | Input student details, validate fields, and save to file. |
+| 👁️ **View Students** | Display all students in a `JTable`. |
+| ✏️ **Update Student** | Edit existing student data. |
+| ❌ **Delete Student** | Remove student record with confirmation. |
+| 🔍 **Search Student** | Find students by ID or name and display results. |
 
-🧠 *All actions include input validation and confirmation messages.*
+🧠 *All features are fully interactive and connected to file storage.*
 
 ---
 
@@ -45,12 +47,12 @@ It provides a simple and intuitive way to **add, view, update, delete, and searc
 
 | Screen | Description |
 |---------|--------------|
-| 🔑 **Login** | Username and password verification. |
-| 🏠 **Dashboard** | Navigation buttons to different panels. |
-| 🧾 **Add Student** | Text fields, combo boxes, and save button. |
-| 📋 **View Students** | Table view with scrollable data. |
-| 🔎 **Search & Update** | Search box, results table, editable fields. |
-| 🗑️ **Delete** | Table + confirmation dialog before removal. |
+| 🔑 **Login** | Username & Password screen before accessing the system. |
+| 🏠 **Dashboard / Home** | Main menu with navigation buttons. |
+| 🧾 **Add Student Panel** | Input form with labels, fields, and combo boxes. |
+| 📋 **View Students Panel** | Table view listing all student records. |
+| 🔎 **Search & Update Panel** | Search box + editable form for updates. |
+| 🗑️ **Delete Panel** | Table view + confirmation dialog for deletion. |
 
 🧱 **Swing Components Used:**  
 `JFrame`, `JPanel`, `JLabel`, `JTextField`, `JButton`, `JComboBox`, `JTable`, `JOptionPane`.
@@ -61,19 +63,68 @@ It provides a simple and intuitive way to **add, view, update, delete, and searc
 
 | Concept | Example |
 |----------|----------|
-| **Encapsulation** | Private fields with getters/setters. |
-| **Inheritance** | Shared base classes for GUI/data. |
-| **Polymorphism** | Overridden methods for flexibility. |
-| **Abstraction** | Abstract base classes for operations. |
+| **Encapsulation** | Private fields with public getters/setters for student attributes. |
+| **Inheritance** | Common base classes reused across GUI panels. |
+| **Polymorphism** | Overridden methods for specific student actions. |
+| **Abstraction** | Abstract classes or interfaces defining shared operations. |
 
 ---
 
 ## 💾 Data Handling
-- Student data stored in text files (read/write).  
-- Uses `ArrayList<Student>` to manage students in memory.  
-- File operations used for **Save** and **Load**.  
-- Input validation and error handling with `JOptionPane`.
+- Student data is **saved and loaded** from local text files.  
+- An `ArrayList<Student>` stores data during runtime.  
+- Includes **input validation**, ensuring valid age, GPA, and no empty fields.  
+- Uses `JOptionPane` dialogs for all messages, errors, and confirmations.  
 
 ---
 
 ## 🔄 Typical Program Flow
+```text
+Start App → Login → Home Screen
+   ↓
+Add Student → Validate → Save → "Student Added!"
+   ↓
+View Students → Display Table
+   ↓
+Search / Update / Delete → Confirm → File Updated
+```
+
+---
+
+## 🧱 Example Project Structure
+```text
+src/
+ ├── model/
+ │   └── Student.java
+ ├── service/
+ │   └── StudentManager.java
+ ├── gui/
+ │   ├── LoginFrame.java
+ │   ├── Dashboard.java
+ │   ├── AddStudentPanel.java
+ │   ├── ViewStudentsPanel.java
+ │   └── SearchUpdatePanel.java
+ └── Main.java
+```
+
+---
+
+## 🧪 Validation & Error Handling
+| Check | System Response |
+|--------|----------------|
+| Empty Field | Displays a warning dialog. |
+| Invalid Age or GPA | Rejects input and requests correction. |
+| Duplicate ID | Shows an error message. |
+| Missing Data File | Automatically creates a new file. |
+
+---
+
+## ✨ Optional Enhancements
+- GPA-based sorting or filtering.  
+- Export all student records to CSV format.  
+- Improved layout and color themes using custom Swing components.  
+- Search suggestions as user types.
+
+---
+
+
